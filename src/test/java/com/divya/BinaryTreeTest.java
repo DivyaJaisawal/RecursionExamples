@@ -3,11 +3,13 @@ package com.divya;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class BinaryTreeTest {
     private BinaryTree binaryTree;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         binaryTree = new BinaryTree();
     }
 
@@ -29,13 +31,27 @@ public class BinaryTreeTest {
         binaryTree.fetchPostOrder(createBinaryTree());
     }
 
-/* Create BinaryTree:
-                      40
-                    /    \
-                  20      60
-                 /  \    /  \
-               10   30  50   70
-*/
+    @Test
+    public void shouldReturnHeightOfAGivenBinaryTree() {
+        int height = binaryTree.calculateHeight(createBinaryTree());
+        System.out.println("******HEIGHT OF THE TREE******* " + height);
+        assertEquals(3, height);
+    }
+
+    @Test
+    public void shouldReturnTotalNumberOfLeafNodesOfAGivenBinaryTree() {
+        int totalLeafNodes = binaryTree.totalLeafNodes(createBinaryTree());
+        System.out.println("******TOTAL LEAF NODES COUNT OF THE TREE******* " + totalLeafNodes);
+        assertEquals(4, totalLeafNodes);
+    }
+
+    /* Create BinaryTree:
+                          40
+                        /    \
+                      20      60
+                     /  \    /  \
+                   10   30  50   70
+    */
     private TreeNode createBinaryTree() {
         TreeNode node1 = new TreeNode(10);
         TreeNode node2 = new TreeNode(20);

@@ -22,4 +22,15 @@ public class BinaryTree {
         fetchPreOrder(node.left);
         fetchPreOrder(node.right);
     }
+
+    public int calculateHeight(TreeNode node) {
+        if (node == null) return 0;
+        return Math.max(calculateHeight(node.left), calculateHeight(node.right)) + 1;
+    }
+
+    public int totalLeafNodes(TreeNode node) {
+        if (node == null) return 0;
+        else if (node.left == null && node.right == null) return 1;
+        else return totalLeafNodes(node.left) + totalLeafNodes(node.right);
+    }
 }
