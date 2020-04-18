@@ -4,3 +4,4 @@ This project has recursion practice problems:
 - Fibonacci series - find the nth element of fibonacci series
 - compute pow(x, n) --> x^n problem
 - Evaluate a polynomial equation
+- Tree Traversal - Inorder, Pre order, Post order 
