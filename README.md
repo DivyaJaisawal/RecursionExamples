@@ -8,3 +8,8 @@ This project has recursion practice problems:
   - Inorder, Pre order, Post order
   - Find the total number of leaf nodes
   - Height of the tree
+- Linked list problems - 
+  - Print a linked list
+  - Reverse a linked list
+  
+
