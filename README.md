@@ -11,5 +11,7 @@ This project has recursion practice problems:
 - Linked list problems - 
   - Print a linked list
   - Reverse a linked list
+- Permutation of a given string ex. "123" -> 123, 132, 213, 231, 312, 321 
+ 
   
 
