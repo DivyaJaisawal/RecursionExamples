@@ -12,6 +12,8 @@ This project has recursion practice problems:
   - Print a linked list
   - Reverse a linked list
 - Permutation of a given string ex. "123" -> 123, 132, 213, 231, 312, 321 
+- Find the permutation of a given string with its occurrence count
+- Find the longest chain from the given dictionary
  
   
 
