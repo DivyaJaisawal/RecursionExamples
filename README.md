@@ -15,6 +15,7 @@ This project has recursion practice problems:
 - Find the permutation of a given string with its occurrence count
 - Find the longest chain from the given dictionary
 - N Queens problem for 8*8 chessboard
+- Merge sort
  
   
 
