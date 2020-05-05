@@ -40,4 +40,35 @@ public class LinkedListTest {
         LinkedListNode node1 = new LinkedListNode(30, node2);
         return node1;
     }
+
+    private LinkedListNode createLinkedList2() {
+        LinkedListNode node5 = new LinkedListNode(120, null);
+        LinkedListNode node4 = new LinkedListNode(80, node5);
+        LinkedListNode node3 = new LinkedListNode(70, node4);
+        LinkedListNode node2 = new LinkedListNode(40, node3);
+        LinkedListNode node1 = new LinkedListNode(20, node2);
+        return node1;
+    }
+
+    private LinkedListNode createLinkedList3() {
+        LinkedListNode node5 = new LinkedListNode(170, null);
+        LinkedListNode node4 = new LinkedListNode(150, node5);
+        LinkedListNode node3 = new LinkedListNode(130, node4);
+        LinkedListNode node2 = new LinkedListNode(60, node3);
+        LinkedListNode node1 = new LinkedListNode(10, node2);
+        return node1;
+    }
+
+    @Test
+    public void shouldMergeTwoSortedList() {
+        LinkedListNode sortedLinkedList = linkedList.mergeTwoWayLists(createLinkedList(), createLinkedList2());
+        linkedList.displayLinkedList(sortedLinkedList);
+    }
+
+    @Test
+    public void shouldMergeKSortedList() {
+        LinkedListNode[] lists = new LinkedListNode[]{createLinkedList(), createLinkedList2(), createLinkedList3()};
+        LinkedListNode sortedLinkedList = linkedList.mergeKSortedLists(lists);
+        linkedList.displayLinkedList(sortedLinkedList);
+    }
 }

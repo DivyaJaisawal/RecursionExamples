@@ -3,23 +3,22 @@ package com.divya;
 /**
  * HEAD
  * |A| -> |B| -> |C| -> |D| -> |E| -> NULL  -- Input list
- *
- *
+ * <p>
+ * <p>
  * HEAD
  * |A| |E| -> |D| -> |C| -> |B| -> NULL (A points to B)
- *  |------------------------^
- *
- *                             HEAD
+ * |------------------------^
+ * <p>
+ * HEAD
  * |E| -> |D| -> |C| -> |B| <-> |A|
- *
- *
- *                             HEAD
+ * <p>
+ * <p>
+ * HEAD
  * |E| -> |D| -> |C| -> |B| -> |A| -> NULL
- *
- *
+ * <p>
+ * <p>
  * HEAD
  * |E| -> |D| -> |C| -> |B| -> |A| -> NULL   -- output list
- *
  */
 
 public class LinkedList {
@@ -36,5 +35,56 @@ public class LinkedList {
         head.node.node = head;
         head.node = null;
         return newLinkedList;
+    }
+
+    public LinkedListNode mergeTwoWayLists(LinkedListNode l1, LinkedListNode l2) {
+        LinkedListNode l3 = new LinkedListNode();
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+
+        if (l1.data <= l2.data) {
+            l3.data = l1.data;
+            l1 = l1.node;
+        } else {
+            l3.data = l2.data;
+            l2 = l2.node;
+        }
+        LinkedListNode start = l3;
+        while (l1 != null && l2 != null) {
+            if (l1.data < l2.data) {
+                l3.node = new LinkedListNode(l1.data);
+                l3 = l3.node;
+                l1 = l1.node;
+            } else {
+                l3.node = new LinkedListNode(l2.data);
+                l3 = l3.node;
+                l2 = l2.node;
+            }
+        }
+
+        while (l1 != null) {
+            l3.node = new LinkedListNode(l1.data);
+            l3 = l3.node;
+            l1 = l1.node;
+        }
+        while (l2 != null) {
+            l3.node = new LinkedListNode(l2.data);
+            l3 = l3.node;
+            l2 = l2.node;
+        }
+        return start;
+    }
+
+    public LinkedListNode mergeKSortedLists(LinkedListNode[] lists) {
+        LinkedListNode mergedList = lists[0];
+
+        for (LinkedListNode node : lists) {
+            mergedList = mergeTwoWayLists(mergedList, node);
+        }
+        return mergedList;
     }
 }

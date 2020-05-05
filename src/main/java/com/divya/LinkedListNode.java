@@ -8,4 +8,11 @@ public class LinkedListNode {
         this.data = data;
         this.node = node;
     }
+
+    public LinkedListNode() {
+    }
+
+    public LinkedListNode(int data) {
+        this.data = data;
+    }
 }
