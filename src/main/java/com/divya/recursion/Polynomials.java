@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.recursion;
 
 /**
  * p(n) = A0 + A1x + A2x^2 + A3x^3...ANx^n

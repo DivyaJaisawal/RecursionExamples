@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.linkedlist;
 
 public class LinkedListNode {
     int data;

@@ -1,9 +1,9 @@
-package com.divya;
+package com.divya.tree;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class BinaryTreeTest {
     private BinaryTree binaryTree;
@@ -45,13 +45,37 @@ public class BinaryTreeTest {
         assertEquals(4, totalLeafNodes);
     }
 
+    @Test
+    public void shouldReturnTrueIfNodeIsPresentInTheTree() {
+        boolean isFound = binaryTree.nodePresent(createBinaryTree(), 70);
+        assertTrue(isFound);
+    }
+
+    @Test
+    public void shouldReturnFalseIfNodeIsNotPresentInTheTree() {
+        boolean isFound = binaryTree.nodePresent(createBinaryTree(), 90);
+        assertFalse(isFound);
+    }
+
+    @Test
+    public void shouldReturnNodeIfPresent() {
+        TreeNode node = binaryTree.findNode(createBinaryTree(), 60);
+        assertNotNull(node);
+    }
+
+    @Test
+    public void shouldReturnNullIfNodeIsNotPresent() {
+        TreeNode node = binaryTree.findNode(createBinaryTree(), 90);
+        assertNull(node);
+    }
+
     /* Create BinaryTree:
-                          40
-                        /    \
-                      20      60
-                     /  \    /  \
-                   10   30  50   70
-    */
+                                  40
+                                /    \
+                              20      60
+                             /  \    /  \
+                           10   30  50   70
+            */
     private TreeNode createBinaryTree() {
         TreeNode node1 = new TreeNode(10);
         TreeNode node2 = new TreeNode(20);

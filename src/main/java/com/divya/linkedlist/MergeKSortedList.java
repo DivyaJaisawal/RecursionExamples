@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.linkedlist;
 
 import java.util.LinkedList;
 import java.util.PriorityQueue;

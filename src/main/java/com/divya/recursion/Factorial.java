@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.recursion;
 
 /**
  * Mathematical representation

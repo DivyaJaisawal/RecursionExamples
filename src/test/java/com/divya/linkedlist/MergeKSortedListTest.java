@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.linkedlist;
 
 import org.junit.Before;
 import org.junit.Test;

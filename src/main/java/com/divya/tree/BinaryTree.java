@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.tree;
 
 public class BinaryTree {
 
@@ -23,14 +23,31 @@ public class BinaryTree {
         fetchPreOrder(node.right);
     }
 
+    //use post-order
     public int calculateHeight(TreeNode node) {
         if (node == null) return 0;
         return Math.max(calculateHeight(node.left), calculateHeight(node.right)) + 1;
     }
 
+    //use post-order
     public int totalLeafNodes(TreeNode node) {
         if (node == null) return 0;
         else if (node.left == null && node.right == null) return 1;
         else return totalLeafNodes(node.left) + totalLeafNodes(node.right);
+    }
+
+    //use pre-order
+    public boolean nodePresent(TreeNode root, int node) {
+        if (root == null) return false;
+        if (root.data == node) return true;
+        return nodePresent(root.left, node) || nodePresent(root.right, node);
+    }
+
+    public TreeNode findNode(TreeNode root, int node) {
+        if (root == null) return null;
+        if (root.data == node) return root;
+        TreeNode leftNode = findNode(root.left, node);
+        TreeNode rightNode = findNode(root.right, node);
+        return leftNode == null ? rightNode : leftNode;
     }
 }

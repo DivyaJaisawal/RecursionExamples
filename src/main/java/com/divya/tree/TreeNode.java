@@ -1,4 +1,4 @@
-package com.divya;
+package com.divya.tree;
 
 public class TreeNode {
     TreeNode left, right;
