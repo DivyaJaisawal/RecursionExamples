@@ -8,12 +8,4 @@ public class CustomInput {
         this.index = index;
         this.inputValue = inputValue;
     }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public int getInputValue() {
-        return inputValue;
-    }
 }

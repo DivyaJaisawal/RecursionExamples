@@ -17,6 +17,9 @@ This project has recursion practice problems:
 - N Queens problem for 8*8 chessboard
 - Merge sort
 - Quick sort
- 
+- MergeKSorted Array (O(nlogk))
+- Trie Data Structure
+- Parallel Execution(Num of max Downloads)
+- comparator ex. (amazon interview question)
   
 
