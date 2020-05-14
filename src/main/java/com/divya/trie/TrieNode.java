@@ -22,7 +22,6 @@ public class TrieNode {
             if (current.node.get(word.charAt(i) - 'a') == null) {
                 current.node.set(word.charAt(i) - 'a', new TrieNode());
             }
-
             current = current.node.get(word.charAt(i) - 'a');
         }
         current.isWord = true;
@@ -38,5 +37,28 @@ public class TrieNode {
             }
         }
         return current.isWord;
+    }
+
+    public boolean stringBreaker(String searchString) {
+        Boolean isPresent = false;
+        StringBuilder sb = new StringBuilder(searchString);
+        StringBuilder searchWord = new StringBuilder();
+        return findString(sb, searchWord, isPresent);
+    }
+
+    private boolean findString(StringBuilder inputString, StringBuilder searchWord, Boolean isPresent) {
+        if (inputString.length() == 0) {
+            return true;
+        }
+        for (int i = 0; i < inputString.length(); i++) {
+            searchWord.append(inputString.charAt(i));
+            if (isPresent(searchWord.toString())) {
+                inputString = inputString.replace(0, searchWord.length(), "");
+                if (findString(inputString, new StringBuilder(), isPresent)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

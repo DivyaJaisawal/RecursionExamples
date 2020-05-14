@@ -23,4 +23,15 @@ public class TrieNodeTest {
         boolean isPresent = trieNode.isPresent("efgh");
         assertTrue(isPresent);
     }
+
+    @Test
+    public void shouldReturnWordBreak() {
+        trieNode.insert("cats");
+        trieNode.insert("an");
+        trieNode.insert("dogs");
+        trieNode.insert("efga");
+
+        boolean found = trieNode.stringBreaker("efgadogsdogs");
+        System.out.println(found);
+    }
 }
