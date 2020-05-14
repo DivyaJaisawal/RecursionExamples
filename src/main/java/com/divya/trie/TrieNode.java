@@ -40,13 +40,12 @@ public class TrieNode {
     }
 
     public boolean stringBreaker(String searchString) {
-        Boolean isPresent = false;
         StringBuilder sb = new StringBuilder(searchString);
         StringBuilder searchWord = new StringBuilder();
-        return findString(sb, searchWord, isPresent);
+        return findString(sb, searchWord);
     }
 
-    private boolean findString(StringBuilder inputString, StringBuilder searchWord, Boolean isPresent) {
+    private boolean findString(StringBuilder inputString, StringBuilder searchWord) {
         if (inputString.length() == 0) {
             return true;
         }
@@ -54,7 +53,7 @@ public class TrieNode {
             searchWord.append(inputString.charAt(i));
             if (isPresent(searchWord.toString())) {
                 inputString = inputString.replace(0, searchWord.length(), "");
-                if (findString(inputString, new StringBuilder(), isPresent)) {
+                if (findString(inputString, new StringBuilder())) {
                     return true;
                 }
             }
