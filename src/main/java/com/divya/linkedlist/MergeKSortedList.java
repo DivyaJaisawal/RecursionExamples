@@ -25,16 +25,16 @@ public class MergeKSortedList<T> {
         for (LinkedListNode list : lists) {
             while (list != null) {
                 priorityQueue.add(list.data);
-                list = list.node;
+                list = list.next;
             }
         }
         LinkedListNode result = new LinkedListNode(-1);
         LinkedListNode head = result;
 
         while (!priorityQueue.isEmpty()) {
-            head.node = new LinkedListNode(priorityQueue.remove());
-            head = head.node;
+            head.next = new LinkedListNode(priorityQueue.remove());
+            head = head.next;
         }
-        return result.node;
+        return result.next;
     }
 }

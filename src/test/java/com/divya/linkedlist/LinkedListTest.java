@@ -26,10 +26,10 @@ public class LinkedListTest {
         linkedList.displayLinkedList(reversedLinkedList);
 
         assertEquals(100, reversedLinkedList.data);
-        assertEquals(90, reversedLinkedList.node.data);
-        assertEquals(70, reversedLinkedList.node.node.data);
-        assertEquals(50, reversedLinkedList.node.node.node.data);
-        assertEquals(30, reversedLinkedList.node.node.node.node.data);
+        assertEquals(90, reversedLinkedList.next.data);
+        assertEquals(70, reversedLinkedList.next.next.data);
+        assertEquals(50, reversedLinkedList.next.next.next.data);
+        assertEquals(30, reversedLinkedList.next.next.next.next.data);
 
     }
 

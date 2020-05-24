@@ -2,11 +2,11 @@ package com.divya.linkedlist;
 
 public class LinkedListNode {
     int data;
-    LinkedListNode node;
+    LinkedListNode next;
 
-    public LinkedListNode(int data, LinkedListNode node) {
+    public LinkedListNode(int data, LinkedListNode next) {
         this.data = data;
-        this.node = node;
+        this.next = next;
     }
 
     public LinkedListNode() {

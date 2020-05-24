@@ -27,15 +27,15 @@ public class LinkedList {
     public void displayLinkedList(LinkedListNode node) {
         if (node == null) return; // base cases
         System.out.println("---------------------------------------------------");
-        System.out.println("data: " + node.data + "  next: " + node.node);
-        displayLinkedList(node.node);  // recursive case
+        System.out.println("data: " + node.data + "  next: " + node.next);
+        displayLinkedList(node.next);  // recursive case
     }
 
     public LinkedListNode reverseLinkedList(LinkedListNode head) {
-        if (head == null || head.node == null) return head; // base cases
-        LinkedListNode newLinkedList = reverseLinkedList(head.node); // recursive case
-        head.node.node = head;
-        head.node = null;
+        if (head == null || head.next == null) return head; // base cases
+        LinkedListNode newLinkedList = reverseLinkedList(head.next); // recursive case
+        head.next.next = head;
+        head.next = null;
         return newLinkedList;
     }
 
@@ -50,33 +50,33 @@ public class LinkedList {
 
         if (l1.data <= l2.data) {
             l3.data = l1.data;
-            l1 = l1.node;
+            l1 = l1.next;
         } else {
             l3.data = l2.data;
-            l2 = l2.node;
+            l2 = l2.next;
         }
         LinkedListNode start = l3;
         while (l1 != null && l2 != null) {
             if (l1.data < l2.data) {
-                l3.node = new LinkedListNode(l1.data);
-                l3 = l3.node;
-                l1 = l1.node;
+                l3.next = new LinkedListNode(l1.data);
+                l3 = l3.next;
+                l1 = l1.next;
             } else {
-                l3.node = new LinkedListNode(l2.data);
-                l3 = l3.node;
-                l2 = l2.node;
+                l3.next = new LinkedListNode(l2.data);
+                l3 = l3.next;
+                l2 = l2.next;
             }
         }
 
         while (l1 != null) {
-            l3.node = new LinkedListNode(l1.data);
-            l3 = l3.node;
-            l1 = l1.node;
+            l3.next = new LinkedListNode(l1.data);
+            l3 = l3.next;
+            l1 = l1.next;
         }
         while (l2 != null) {
-            l3.node = new LinkedListNode(l2.data);
-            l3 = l3.node;
-            l2 = l2.node;
+            l3.next = new LinkedListNode(l2.data);
+            l3 = l3.next;
+            l2 = l2.next;
         }
         return start;
     }
@@ -95,14 +95,14 @@ public class LinkedList {
         HashSet<LinkedListNode> hashSet = new HashSet<>();
         while (node1 != null) {
             hashSet.add(node1);
-            node1 = node1.node;
+            node1 = node1.next;
         }
 
         while (node2 != null) {
             if (hashSet.contains(node2)) {
                 return node2;
             }
-            node2 = node2.node;
+            node2 = node2.next;
         }
         return null;
     }

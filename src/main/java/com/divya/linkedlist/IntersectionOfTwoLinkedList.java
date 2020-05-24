@@ -8,13 +8,13 @@ public class IntersectionOfTwoLinkedList {
         HashSet<LinkedListNode> hashSet = new HashSet<>();
         while (node1 != null) {
             hashSet.add(node1);
-            node1 = node1.node;
+            node1 = node1.next;
         }
         while (node2 != null) {
             if (hashSet.contains(node2)) {
                 return node2;
             }
-            node2 = node2.node;
+            node2 = node2.next;
         }
         return null;
     }
