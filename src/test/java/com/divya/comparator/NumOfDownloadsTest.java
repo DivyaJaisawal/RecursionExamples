@@ -10,7 +10,7 @@ public class NumOfDownloadsTest {
     private NumOfDownloads numOfDownloads;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         numOfDownloads = new NumOfDownloads();
     }
 

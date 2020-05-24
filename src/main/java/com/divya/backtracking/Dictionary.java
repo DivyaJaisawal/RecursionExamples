@@ -8,7 +8,6 @@ public class Dictionary {
     public HashMap<String, Integer> longestChain(String[] dictionaryWords) {
         HashMap<String, Integer> longestChain = new HashMap<>();
         HashSet<String> dictionaryHashSet = new HashSet<>();
-
         for (String word : dictionaryWords) {
             dictionaryHashSet.add(word);
         }

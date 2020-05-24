@@ -3,6 +3,7 @@ package com.divya.backtracking;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,13 +16,19 @@ public class PermutationTest {
     }
 
     @Test
-    public void shouldPrintPermutedList() {
+    public void shouldPrintPermutedListByInvokingPermuteWithReturnList() {
+        List<List<Integer>> lists = permutation.permuteWithReturnList(new int[]{1, 2, 3});
+        for (List<Integer> list : lists){
+            System.out.println(list);
+        }
+    }
+
+    @Test
+    public void shouldPrintPermutedListByInvokingPermuteUtils() {
         Set<String> inputSet = ConcurrentHashMap.newKeySet();
         inputSet.add("1");
         inputSet.add("2");
         inputSet.add("3");
-        inputSet.add("4");
-
         permutation.permuteUtil(inputSet);
     }
 }

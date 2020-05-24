@@ -1,6 +1,7 @@
 package com.divya.trie;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class TrieNode {
@@ -42,18 +43,24 @@ public class TrieNode {
     public boolean stringBreaker(String searchString) {
         StringBuilder sb = new StringBuilder(searchString);
         StringBuilder searchWord = new StringBuilder();
-        return findString(sb, searchWord);
+        HashMap<String, Boolean> hashMap = new HashMap<>();
+        return findString(sb, searchWord, hashMap);
     }
 
-    private boolean findString(StringBuilder inputString, StringBuilder searchWord) {
+    private boolean findString(StringBuilder inputString, StringBuilder searchWord, HashMap<String, Boolean> hashMap) {
         if (inputString.length() == 0) {
             return true;
         }
+        if (hashMap.containsKey(searchWord)) {
+            return hashMap.get(searchWord);
+        }
+
         for (int i = 0; i < inputString.length(); i++) {
             searchWord.append(inputString.charAt(i));
             if (isPresent(searchWord.toString())) {
                 inputString = inputString.replace(0, searchWord.length(), "");
-                if (findString(inputString, new StringBuilder())) {
+                hashMap.put(searchWord.toString(), true);
+                if (findString(inputString, new StringBuilder(), hashMap)) {
                     return true;
                 }
             }

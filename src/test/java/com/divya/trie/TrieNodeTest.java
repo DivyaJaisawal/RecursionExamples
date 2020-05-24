@@ -26,12 +26,17 @@ public class TrieNodeTest {
 
     @Test
     public void shouldReturnWordBreak() {
-        trieNode.insert("cats");
-        trieNode.insert("an");
-        trieNode.insert("dogs");
-        trieNode.insert("efga");
-
-        boolean found = trieNode.stringBreaker("efgadogsdogs");
+        trieNode.insert("a");
+        trieNode.insert("aa");
+        trieNode.insert("aaa");
+        trieNode.insert("aaaa");
+        trieNode.insert("aaaaa");
+        trieNode.insert("aaaaaa");
+        trieNode.insert("aaaaaaa");
+        trieNode.insert("aaaaaaaa");
+        trieNode.insert("aaaaaaaaa");
+        trieNode.insert("aaaaaaaaaa");
+        boolean found = trieNode.stringBreaker("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
         System.out.println(found);
     }
 }
