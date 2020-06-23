@@ -43,8 +43,9 @@ public class LinkedListTest {
     }
 
     private LinkedListNode createLinkedList2() {
-        LinkedListNode node5 = new LinkedListNode(120, null);
-        LinkedListNode node4 = new LinkedListNode(80, node5);
+        LinkedListNode node6 = new LinkedListNode(20, null);
+        LinkedListNode node5 = new LinkedListNode(40, node6);
+        LinkedListNode node4 = new LinkedListNode(70, node5);
         LinkedListNode node3 = new LinkedListNode(70, node4);
         LinkedListNode node2 = new LinkedListNode(40, node3);
         LinkedListNode node1 = new LinkedListNode(20, node2);
@@ -59,6 +60,8 @@ public class LinkedListTest {
         LinkedListNode node1 = new LinkedListNode(10, node2);
         return node1;
     }
+
+    // 10 -> 60 -> 130 ->150 ->170
 
     @Test
     public void shouldMergeTwoSortedList() {
@@ -77,6 +80,27 @@ public class LinkedListTest {
     public void shouldFindIntersectingNode() {
         LinkedListNode intersectionNode = linkedList.getIntersectionNode(createLinkedList4(), createLinkedList5());
         assertNull(intersectionNode);
+    }
+
+    @Test
+    public void shouldReverse() {
+        LinkedListNode reverse = linkedList.reverse(createLinkedList3());
+        linkedList.displayLinkedList(reverse);
+
+    }
+
+    @Test
+    public void shouldReturnTrueIfLinkedListIsCyclic() {
+        LinkedListNode listNode = createLinkedList2();
+        System.out.println(listNode.next);
+        boolean hasCycle = linkedList.hasCycle(listNode);
+        System.out.println(hasCycle);
+    }
+
+    @Test
+    public void shouldReturnTrueIfPalindrome() {
+        boolean palindrome = linkedList.isPalindrome(createLinkedList2());
+        System.out.println(palindrome);
     }
 
     private LinkedListNode createLinkedList4() {
